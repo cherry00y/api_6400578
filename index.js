@@ -21,6 +21,25 @@ app.get('/attractions',(req,res) =>{
     )
 })
 
+/*app.get('/attractions/:id', (req, res) => {
+    const attractionId = req.params.id;
+    connection.query(
+        'SELECT name, detail, coverimage FROM attractions WHERE id = ?',
+        [attractionId],
+        function(err, results, fields) {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Internal Server Error');
+                return;
+            }
+            res.send(results);
+        }
+    );
+});*/
+
+
+
+
 app.listen(process.env.PORT || 3001 , () =>{
     console.log('Example app listening on port 3001')
 })
