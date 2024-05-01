@@ -24,7 +24,7 @@ app.get('/attractions',(req,res) =>{
 app.get('/attractions/id', (req, res) => {
     const detailId = req.params.id;
     connection.query(
-        'SELECT name, detail, coverimage FROM attractions WHERE id = ?',[detailId],
+        'SELECT name, detail, coverimage FROM attractions WHERE id = 1',[detailId],
         function(err, results, fields) {
             if (err) {
                 console.error(err);
