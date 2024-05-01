@@ -21,7 +21,7 @@ app.get('/attractions',(req,res) =>{
     )
 })
 
-app.get('/attractions/:id', (req, res) => {
+app.get('/attractions/id', (req, res) => {
     const detailId = req.params.id;
     connection.query(
         'SELECT name, detail, coverimage FROM attractions WHERE id = ?',[detailId],
@@ -35,6 +35,8 @@ app.get('/attractions/:id', (req, res) => {
         }
     );
 });
+
+
 
 
 
