@@ -21,11 +21,10 @@ app.get('/attractions',(req,res) =>{
     )
 })
 
-/*app.get('/attractions/:id', (req, res) => {
-    const attractionId = req.params.id;
+app.get('/attractions/:id', (req, res) => {
+    const detailId = req.params.id;
     connection.query(
-        'SELECT name, detail, coverimage FROM attractions WHERE id = ?',
-        [attractionId],
+        'SELECT name, detail, coverimage FROM attractions WHERE id = ?',[detailId],
         function(err, results, fields) {
             if (err) {
                 console.error(err);
@@ -35,7 +34,7 @@ app.get('/attractions',(req,res) =>{
             res.send(results);
         }
     );
-});*/
+});
 
 
 
