@@ -36,6 +36,22 @@ app.get('/attractions/id', (req, res) => {
     );
 });
 
+app.post('/create/attractions', (req, res) => {
+    connection.query(
+        'INSERT INTO `attractions` (`name`, `detail`, `coverimage`) VALUES (?, ?, ?,)',
+        [req.body.name, req.body.detail, req.body.coverimage],
+         function (err, results, fields) {
+            if (err) {
+                console.error('Error in POST /users:', err);
+                res.status(500).send('Error adding user');
+            } else {
+                res.status(201).send(results);
+            }
+        }
+    )
+})
+
+
 
 
 
